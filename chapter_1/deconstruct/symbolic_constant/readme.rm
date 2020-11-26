@@ -67,11 +67,58 @@ what's left is a program, algorithm, that takes the  'high level language' as an
 and translates it to the 'machine language' as an output.
 This program must be written and fed to the machine as 'machine language' at first.
 Now it is possible to feed that program with a sequance of letters and it will either
-accept it or reject. 
-And from that we can build infinite amount of complexity...
+accept it or reject.
 
-And this 'Infinite amount of complexity' once again is the root of 
-all kinds of confusion...
+This program is a compiler, or maybe interpreter.
+But it's not.
+Today, there is not one program that translates
+hight level language into a machine language.
+Compilation is a composition of many different programs.
+one program takes a source file as an input, generates an
+output, then that becomes an input of a next program and so on...
+But the end result is always a machine language...
+
+The programs that take part in compilation are different
+for different languages.
+Not only that but they might be different for the 
+same languages as well...
+which means that same expression with
+different compilators might result in 
+different machine codes.
+Therefore we also need the standartization of
+the implementation of languages, at least on some level.
+
+As my understanding suggests, the actual formal language 
+isn't concerned about hardware at all...
+it's complitely unaware of input/output,
+what type of memory or cpu there is...
+Translator should worry about that, not the language.
+Current working environment must provide a language
+with tools and functions which will make the hardware
+accessable from the language. These are hardware
+and OS dependant. I don't really understand how these tools are
+provided to it.
 
 
+Now, we are getting closer to our original concern...
+What the language isn't also concerned is how it is the 
+part of a file, and how these files are merged, or how
+different files or sections of code are needed for different 
+architectures.
+And humans don't want to repeat the same thing for every
+program and write everything in single file which will become
+enormous very soon.
+To manage that, we need certain type of directives,
+which will be given using a 'meta' language.
+These directives are able to modify the source code itself,
+and set some states for a translator.
 
+Basically manipulating the source code with code and
+setting states for a compiler. 
+But because this directives are some formal language too,
+they need their translator.
+In case of C this program is C preprocessor.
+
+Before C source goes in the C translator, it goes 
+in the C preprocessor which will prepare C source
+and its translator and then translation happens smoothly.
